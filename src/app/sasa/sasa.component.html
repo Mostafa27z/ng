@@ -1,0 +1,10 @@
+
+<p>
+  <input type="text" [(ngModel)]="w" placeholder="width">
+  <input type="text" [(ngModel)]="h"  placeholder="height" >
+  <input type="color" [(ngModel)]="bg"  placeholder="background color" >
+  <input type="text" [(ngModel)]="m" placeholder="margin" >
+</p>
+<div [style.backgroundColor]="bg" [style.width]="w + 'px'" [style.margin]="m +'px'"[style.height]="h + 'px'">
+
+</div>

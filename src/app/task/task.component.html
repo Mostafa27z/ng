@@ -1,0 +1,26 @@
+
+<div>
+  <div class="col-12 text-center mb-5 "><app-button  text="{{val}}" (clk)="add()" ></app-button></div>
+  <form *ngIf="shw" action="" class="d-flex justify-content-center flex-wrap gap-3 mb-5 alert alert-success container py-5">
+    <input  [(ngModel)]="text" type="text" name="task" placeholder="task" class="col-10 px-5 py-3 rounded rounded-5">
+    <input [(ngModel)]="day" type="text" name="day" placeholder="day" class="col-10 px-5 py-3 rounded rounded-5">
+    <div class="col-10 d-flex justify-content-center gap gap-2 align-items-center" ><input [(ngModel)]="reminder" type="checkbox" name="reminder" id="reminder"> <label for="reminder">Reminder</label> </div>
+
+    <button class="btn btn-info col-3" (click)="addTask()">Save Task</button>
+  </form>
+  <div class="container d-flex flex-wrap justify-content-center ">
+    <div [ngClass]="{success: item.reminder}" (dblclick)="togg(item)" class="alert alert-primary col-10 d-flex justify-content-between align-items-center" *ngFor="let item of task">
+      <div>
+        <h4>{{item.text}}</h4>
+        {{item.day}}
+      </div>
+      <button (click)="dele(item)" class="btn btn-outline-danger" type="button" >
+        <i  class="fa-solid fa-trash " style="font-size: 30px;"></i>
+      </button>
+
+    </div>
+
+
+  </div>
+
+</div>

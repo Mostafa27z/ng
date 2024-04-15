@@ -1,0 +1,12 @@
+<form  [formGroup]="form">
+<p>
+  <input name="mail" formControlName="mail"   ngModel     format="up" type="text" [(ngModel)]="task"> <button (click)="print()">Add Task</button>
+</p>
+
+<div *ngIf="form.get('mail')?.invalid">
+gyjfjfk
+</div>
+</form>
+<ul>
+  <li *ngFor="let t of tasks">{{t| pi}} <button (click)="rem(t)">remove</button></li>
+</ul>

@@ -1,0 +1,2 @@
+<input type="text" #name="ngModel" ngModel required >
+<div class="alert alert-danger col-md-6 " *ngIf="name.invalid && name.touched">Enter data</div>
